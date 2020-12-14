@@ -1,0 +1,561 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+} /* Easier padding when dealing with border-box*/
+
+:root {
+    
+    /* Setting up custom properties */
+
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25), 
+          0.125em 0.125em 0.25em rgba(0,0,0,0.15) ;
+
+}
+
+/* to make them bigger at larger screen sizes */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General styles */
+
+html {
+    /* to make the transition within the page smoother */
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+strong { font-weight: var(--fw-bold);}
+
+
+/* everything that is in a focus state (when you tab through the page) will have an outline on it */
+:focus {
+    outline: 3px solid var(--clr-accent);
+    
+    /* not noticable so to make it more pop */
+    outline-offset: 3px;
+}
+
+/* Buttons */
+
+.btn {
+
+    display: inline-block;
+    padding: 0.5em 2.5em ;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none; /* to remove the link line under it */
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+
+    transform: scale(1.1) ;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {font-size: var(--fs-h1);}
+h2 {font-size: var(--fs-h2);}
+h3 {font-size: var(--fs-h3);}
+
+.section__title{
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+/*display block so my name is always on another line*/
+.section__title--intro strong{ 
+    display: block;  
+}
+
+.section__subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+/* header */
+
+/* we weant logo on the left and button on the right */
+header {
+    display: flex;
+    justify-content: space-between;
+
+    /* need padding between the right and left side of the page */
+    padding: 1em;
+}
+
+.logo {
+    max-width: 100px;
+}
+ 
+.nav {
+    position: fixed;
+
+    /* the nav bar is appearing in front of the logo so tried pushing it down */
+    /* margin-top: 4em;  */
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* to pull it infront of everything else */
+    z-index: 100; 
+
+
+    /* we are going to have 2 different states  */
+    transform: translateX(100%);
+
+    /* could use ease and out but we used (.5, 0, .5, 1) */
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+
+    /* with flex there placed next to each other but we want them one after each other */
+    flex-direction: column;
+
+    /* want it to be evenly spaced */
+    justify-content: space-evenly;
+    align-items: center;
+
+    /* there is some extra spacing on top so to fix that */
+    margin: 0;
+    padding: 0;
+
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+
+    /* to remover the underline of links */
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+/* the hamburger button is too big so to reduce it */
+.nav-toggle {
+    height: 25px;
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    right: 1em;
+    top: 1em;
+
+    /* always want this button availabe to us */
+    z-index: 1000;
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    /* want the hamburger icon to stay fixed when we scroll */
+    position: fixed;
+}
+
+/* we rotate it before and after to make it rotate into an X */
+.nav-open .hamburger {
+    transform: rotate(0.625turn);
+}
+
+.nav-open .hamburger::before {
+     transform: rotate(90deg) translateX(-10px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+
+.hamburger {
+
+    /* default its span and its display is inline so we change it to block to avoid any issues */
+    display: block;
+    position: relative;
+    
+    /* move the hamburger more towards the top */
+    /* top: -30px; */
+}
+
+.hamburger, 
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+
+}
+
+
+
+/* hamburger psudo elements */
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+
+    /* avoid huge bar relative to the page */
+    left: 0;
+    right: 0;
+}
+
+/* initially set to 6px but I made a bit more space in between cause I wasnt able to bring it up that much  */
+.hamburger::before { top: 10px;}
+.hamburger::after { bottom: 10px;}
+
+
+/* Intro section */
+
+.intro {
+    position: relative;
+}
+
+.intro__img{
+    box-shadow: var(--bs);
+}
+
+/* to make the green boc small in smaller screeens*/
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        grid-column-gap: 1em; /*Spacing between image and text*/
+        width: min-content;
+        margin: 0 auto;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative; /*puts the green back behind the image*/
+        z-index: 2;
+    } 
+
+    .section__subtitle--intro {
+        align-self: start;  /*stop the front end dev green box from stretching down*/
+        grid-column: -1 / 1;
+
+        /*green bar is now bottom of image so we do this to fix it*/
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+
+        /*green bar not alligning with text on right since its relative positioning*/
+        width: calc(100% + 1.5em);
+
+    }
+}
+
+/*  My serivces section */
+
+.my-services {
+    background-color: var(--clr-dark);
+    background-image: url("img/james-harrison-vpOeXr5wmR4-unsplash.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-light);
+    text-align: center;    
+}
+
+.section__title--services {
+
+    color: var(--clr-accent);
+    position: relative;
+
+} 
+
+/*psudo element to make the underscore under title*/
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+}
+
+.services {
+    margin-bottom: 4em;
+}
+
+/*so for smaller screens the services discription is too long so to fix that*/
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* want to make the services into columns for larger screeners  */
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+
+        /* we chagne margin left right to auto instead of just margin so it doesnt override margin bottom in services */
+        margin-left: auto;
+        margin-right: auto; 
+    }
+
+    /* the + looks at the siblings of the original service*/
+    .service + .service {
+        margin-left: 2em;
+    }
+}
+
+
+/* About me (Who I am) */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+
+        grid-column-gap: 2em ;
+    }
+ 
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1 / -1; /*brings the green bar and text under the image */
+        grid-row: 2; /* bring the text and green in place */
+        position: relative;
+        left: 0em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        /* to take into account the padding left so the text in green will never go behind the image */
+        padding-right: calc(200px + 4em); 
+
+    }
+ 
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+
+    }
+}
+
+/* My Work */
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.portfolio {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); makes 3 colums*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio__item {
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+
+.portfolio__img {
+
+    /* slow and similar to in and out */
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1), 
+        opacity 250ms linear;
+
+}
+
+/* to fix the outline which appears behin the next picture during the hover effect */
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* we add them focus state for similar affect when tabbed onto*/
+/* we add it to the child item to change */
+
+.portfolio__img:hover, 
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+/* Footer */
+
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0; 
+    font-size: var(--fs-h3);
+}
+
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    
+    font-weight: var(--fw-bold);
+}
+
+.social-list {
+    /* we dont want bullet points */
+    list-style: none; 
+    
+    /* we want them next to each other */
+    display: flex;
+    justify-content: center;
+
+    /* space each other out */
+    /* theres empty space under icons */
+    /* margin: 2em  0; */
+
+    margin: 2em 0 0;
+
+    /* deafult padding will make it off center */
+    padding: 0;
+
+}
+
+/* social icons to tight */
+.social-list__item {
+    margin: 0 0.5em;
+}
+
+/* more space between them in case you are using your finger for mobile devices */
+
+.social-list__link {
+    padding: 0.5em;
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+     opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
