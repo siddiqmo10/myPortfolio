@@ -1,108 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, intial-scale=1.0"> <!-- To ensure that it works well on a mobile  -->
-        <title>DevMohammed Portfolio Wesbite</title>
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> <!-- Tried to make the website look the same with diffrent browsers-->
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> <!--Font Awesome for social media icons-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, intial-scale=1.0" />
+    <!-- To ensure that it works well on a mobile  -->
+    <title>DevMohammed Portfolio Wesbite</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <!-- Tried to make the website look the same with diffrent browsers-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!--Font Awesome for social media icons-->
 
-        
-        <link href="https://fonts.googleapis.com/css?familty=Source+Code+Pro:400,900|Source+Sans
-        +Pro:300,900%display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?familty=Source+Code+Pro:400,900|Source+Sans
+        +Pro:300,900%display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css" />
 
-        <script src="https://kit.fontawesome.com/7c5577770b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/7c5577770b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Top Header that contains logo and nav bar-->
+    <header>
+      <div class="logo">
+        <img
+          src="img/fca41415-5361-4ea7-a007-cfbb19f03153_200x200.png"
+          alt=""
+        />
+      </div>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <!--The __ is signify list is a subcomponent of nav-->
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About me</a>
+          </li>
+          <li class="nav__item">
+            <a href="#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    </head>
-    <body>
-        <!-- Top Header that contains logo and nav bar-->
-        <header>
-            <div class="logo">
-                <img src="img/fca41415-5361-4ea7-a007-cfbb19f03153_200x200.png" alt="">
-            </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list"> <!--The __ is signify list is a subcomponent of nav-->
-                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
-                </ul>
-            </nav>
-        </header>
+    <!--Introduction-->
+    <section class="intro" id="home">
+      <!--Use classes for styling and id's for anchoring-->
+      <h1 class="section__title section__title--intro">
+        <!-- the -- is becuase its a modifier class and will modify section title-->
+        Hi, I am <strong>Mohammed Siddiq</strong>
+      </h1>
+      <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+      <img
+        src="img/14937476_941866672586434_7755123660652270767_n.jpg"
+        alt="a picture of Mohammed Siddiq smiling"
+        class="intro__img"
+      />
+    </section>
 
-        <!--Introduction-->
-        <section class="intro" id="home"> <!--Use classes for styling and id's for anchoring-->
-            <h1 class="section__title section__title--intro"> <!-- the -- is becuase its a modifier class and will modify section title-->
-                Hi, I am <strong>Mohammed Siddiq</strong>
-            </h1>
-            <p class="section__subtitle section__subtitle--intro">front-end dev</p>
-            <img src="img/14937476_941866672586434_7755123660652270767_n.jpg" alt="a picture of Mohammed Siddiq smiling" class="intro__img" >
-        </section>
+    <!--My services-->
+    <section class="my-services" id="services">
+      <h2 class="section__title section__title--services">What I do</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Design + Development</h3>
+          <p>
+            I have designed and developed many projects over the year with the
+            pandemic opening the door to my front-end career path. I love
+            learning new concepts as I code along projects and always try to set
+            new goals in terms of my design.
+          </p>
+        </div>
+        <!-- / service -->
 
+        <div class="service">
+          <h3>E-commerce</h3>
+          <p>
+            One of my first projects involved designing an enhanced version of
+            Craig’s List, that allowed easier User Interface experience while
+            maintaining the website’s vast database. This projected introduced
+            me to the E-Commerce section of web development which is currently
+            at the top of my interests.
+          </p>
+        </div>
+        <!-- / service -->
 
-        <!--My services-->
-        <section class="my-services" id="services">
-            <h2 class="section__title section__title--services">What I do</h2>
-            <div class="services">
-                <div class="service">
-                    <h3>Design + Development</h3>
-                    <p>I have designed and developed many projects over the year with the pandemic opening the door to my front-end career path. I love learning new concepts as I code along projects and always try to set new goals in terms of my design.</p>
-                </div> <!-- / service -->   
-                
-                <div class="service">
-                    <h3>E-commerce</h3>
-                    <p>One of my first projects involved designing an enhanced version of Craig’s List, that allowed easier User Interface experience while maintaining the website’s vast database. This projected introduced me to the E-Commerce section of web development which is currently at the top of my interests.</p>
-                </div> <!-- / service -->   
+        <div class="service">
+          <h3>Wix</h3>
+          <p>
+            I was the project leader of the UXD team for HCE4, where my main
+            mission was to maintain and improve the functionality and design of
+            the company website which was made by Wix. After months of playing
+            around with Wix, I have grown more comfortable with the platform and
+            continue to work on it for personal projects.
+          </p>
+        </div>
+        <!-- / service -->
+      </div>
+      <!-- / services -->
 
-                <div class="service">
-                    <h3>Wix</h3>
-                    <p>I was the project leader of the UXD team for HCE4, where my main mission was to maintain and improve the functionality and design of the company website which was made by Wix. After months of playing around with Wix, I have grown more comfortable with the platform and continue to work on it for personal projects.</p>
-                </div> <!-- / service -->   
+      <a href="#work" class="btn">My Work</a>
+    </section>
 
-            </div> <!-- / services -->
-            
-            <a href="#work" class="btn">My Work</a>
-        </section>
+    <!-- About Me -->
+    <section class="about-me" id="about">
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">
+        Designer & developer based out of Toronto
+      </p>
 
+      <div class="about-me__body">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          ducimus doloribus optio voluptatem aperiam! Enim at dicta, officia,
+          libero amet, distinctio ad blanditiis expedita mollitia voluptatibus
+          doloribus vitae earum accusamus.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum
+          rerum blanditiis explicabo sit, impedit hic error voluptates nemo nam
+          deserunt! Ipsum tempore repellat quisquam? Tempore aperiam laboriosam
+          nihil unde?/p>
+        </p>
+      </div>
 
-        <!-- About Me -->
-        <section class="about-me" id="about">
-            <h2 class="section__title section__title--about">Who I am</h2>
-            <p class="section__subtitle section__subtitle--about">Designer & developer based out of Toronto</p>
-            
-            <div class="about-me__body">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ducimus doloribus optio voluptatem aperiam! Enim at dicta, officia, libero amet, distinctio ad blanditiis expedita mollitia voluptatibus doloribus vitae earum accusamus.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum rerum blanditiis explicabo sit, impedit hic error voluptates nemo nam deserunt! Ipsum tempore repellat quisquam? Tempore aperiam laboriosam nihil unde?/p>
-            </div>
-            <img src="img/Screen Shot 2020-12-13 at 3.58.10 PM.png" alt="standing with a view" class="about-me__img">
-        </section>
+      <img
+        src="img/Screen Shot 2020-12-13 at 3.58.10 PM.png"
+        alt="standing with a view"
+        class="about-me__img"
+      />
+    </section>
 
-        <!-- My Work -->
-        <section class="my-work" id="work">
-            <h2 class="section__title section__title--work">My Work</h2>
-            <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+    <!-- My Work -->
+    <section class="my-work" id="work">
+      <h2 class="section__title section__title--work">My Work</h2>
+      <p class="section__subtitle section__subtitle--work">
+        A selection of my range of work
+      </p>
 
-            <div class="portfolio">
-                 <!-- Portfolio item 01 -->
+      <div class="portfolio">
+        <!-- Portfolio item 01 -->
         <a
           href="https://netflix-clone-4fcb5.web.app"
           class="portfolio__item"
           target="_blank"
         >
-          <!-- src="https://variety.com/wp-content/uploads/2020/05/netflix-logo.png" -->
-          <img
-            src="https://losalamosreporter.files.wordpress.com/2020/01/8313d3d5dccaa73ee56b7153953f290b.jpg"
-            alt=""
-            class="portfolio__img"
-          />
+          <a href="portfolio-item1.html" class="portfolio__item">
+            <!-- src="https://variety.com/wp-content/uploads/2020/05/netflix-logo.png" -->
+            <img
+              src="https://losalamosreporter.files.wordpress.com/2020/01/8313d3d5dccaa73ee56b7153953f290b.jpg"
+              alt=""
+              class="portfolio__img"
+            />
+          </a>
         </a>
 
         <!-- Portfolio item 02 -->
@@ -126,39 +193,45 @@
           target="_blank"
         >
           <a href="portfolio-item.html" class="portfolio__item">
-          <img
-            src="https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_slack-brand-refresh_header-1.png"
-            alt=""
-            class="portfolio__img"
-          />
+            <img
+              src="https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_slack-brand-refresh_header-1.png"
+              alt=""
+              class="portfolio__img"
+            />
+          </a>
         </a>
-        </a>
+      </div>
+    </section>
 
-                
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <a href="mailto:hishamsid5@gmail.com" class="footer__link">hishamsid5@gmail.com</a>
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com/siddiqmo10" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://www.linkedin.com/in/mohammed-h-siddiq/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <!-- <li class="social-list__item"><a class="social-list__link" href=""></a></li>
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="mailto:hishamsid5@gmail.com" class="footer__link"
+        >hishamsid5@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://github.com/siddiqmo10"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.linkedin.com/in/mohammed-h-siddiq/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <!-- <li class="social-list__item"><a class="social-list__link" href=""></a></li>
                 <li class="social-list__item"><a class="social-list__link" href=""></a></li> -->
+      </ul>
+    </footer>
 
-            </ul>
-        </footer> 
-
-        <script src="index.js"></script>
-
-    </body>
+    <script src="index.js"></script>
+  </body>
 </html>
