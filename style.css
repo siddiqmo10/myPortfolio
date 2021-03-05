@@ -333,7 +333,7 @@ header {
         left: -1.5em;
 
         /*green bar not alligning with text on right since its relative positioning*/
-        width: calc(100% + 1.5em);
+        width: calc(100% + 11.75em);
 
     }
 }
@@ -558,4 +558,10 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.portfolio-item-individual--img {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
