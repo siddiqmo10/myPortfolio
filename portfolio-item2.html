@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, intial-scale=1.0" />
+    <!-- To ensure that it works well on a mobile  -->
+    <title>DevMohammed Portfolio Wesbite</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <!-- Tried to make the website look the same with diffrent browsers-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!--Font Awesome for social media icons-->
+
+    <link
+      href="https://fonts.googleapis.com/css?familty=Source+Code+Pro:400,900|Source+Sans
+        +Pro:300,900%display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/7c5577770b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="img/fca41415-5361-4ea7-a007-cfbb19f03153_200x200.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <!--The __ is signify list is a subcomponent of nav-->
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#about" class="nav__link">About me</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Introduction-->
+    <section class="intro">
+      <!--Use classes for styling and id's for anchoring-->
+      <h1 class="section__title section__title--intro">
+        <!-- the -- is becuase its a modifier class and will modify section title-->
+        Netflix<strong>Clone</strong>
+      </h1>
+      <p
+        class="section__subtitle section__subtitle--intro"
+        style="width: calc(100% + 11.75em)"
+      >
+        My clone of netflix built with react
+      </p>
+      <a
+        href="https://netflix-clone-4fcb5.web.app"
+        class="intro__img"
+        target="_blank"
+      >
+        <img
+          src="https://losalamosreporter.files.wordpress.com/2020/01/8313d3d5dccaa73ee56b7153953f290b.jpg"
+          alt="netflix logo"
+          class="intro__img"
+        />
+      </a>
+    </section>
+
+    <div class="portfolio-item-individual">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+        consequatur dolorum cumque aliquam mollitia delectus itaque est velit!
+        Pariatur libero nemo culpa enim eveniet voluptates nobis vel deserunt
+        dolor saepe?
+      </p>
+      <img
+        src="img/netflix.png"
+        alt=""
+        class="portfolio-item-individual--img"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+        placeat asperiores nihil fugiat ipsum soluta praesentium error! Sint,
+        vitae dolores magni molestias repellat, unde eos voluptatem, ut sunt
+        earum delectus?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit inventore
+        sint ratione beatae quis, commodi aperiam. Aperiam fugit, sequi ullam
+        doloremque velit dicta natus dolores rerum enim alias, laboriosam quae.
+      </p>
+    </div>
+
+    <footer class="footer">
+      <a href="mailto:hishamsid5@gmail.com" class="footer__link"
+        >hishamsid5@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://github.com/siddiqmo10">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="www.linkedin.com/in/mohammed-h-siddiq"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <!-- <li class="social-list__item"><a class="social-list__link" href=""></a></li>
+        <li class="social-list__item"><a class="social-list__link" href=""></a></li> -->
+      </ul>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
